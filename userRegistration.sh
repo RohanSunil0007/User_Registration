@@ -1,13 +1,22 @@
 #!/bin/bash -x
 echo "Welcome to User Registration Form"
 
-read -p "Enter First Name:" firstName;
+read -p "Enter First Name:" firstName
+read -p "Enter Last Name:" lastName
 
-pattern="^[A-Z]{1}[a-zA-Z]{2,}$";
+pattern="^[A-Z]{1}[a-zA-Z]{2,}$"
+pattern1="^[A-Z]{1}[a-z A-Z]{2,}$"
 
-if [[ $firstName =~ $pattern ]];
+if [[ $firstName =~ $pattern ]]
 then
-	echo "valid first name";
+	echo "Valid first name"
 else
-	echo "invalid first name";
+	echo "Invalid first name !!!"
+fi
+
+if [[ $lastName =~ $pattern ]];
+then
+	echo "Valid last name";
+else
+	echo "Invalid last name!!!";
 fi
